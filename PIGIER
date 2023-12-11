@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Page d'Accueil</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-image: url('URL_DE_L_IMAGE');
+            background-size: cover;
+            background-position: center;
+            color: #000;
+        }
+        h1 {
+            text-align: center;
+            text-transform: uppercase;
+            font-weight: bold;
+            font-size: 36px;
+            margin-top: 100px;
+            text-shadow: 2px 2px 4px rgba(255, 255, 255, 0.5);
+        }
+        form {
+            max-width: 400px;
+            margin: 0 auto;
+            background: rgba(255, 255, 255, 0.8);
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+        }
+        label {
+            display: block;
+            margin-bottom: 8px;
+        }
+        input {
+            width: 100%;
+            padding: 8px;
+            margin-bottom: 16px;
+        }
+        button {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 15px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        #confirmation-message {
+            display: none;
+            text-align: center;
+            margin-top: 20px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Pigier CI</h1>
+
+    <form id="myForm" onsubmit="showConfirmationMessage(); return false;">
+        <label for="nomComplet">Nom Complet:</label>
+        <input type="text" id="nomComplet" name="nomComplet" required>
+
+        <label for="classe">Classe:</label>
+        <input type="text" id="classe" name="classe" required>
+
+        <label for="numParent">Numéro du Parent:</label>
+        <input type="text" id="numParent" name="numParent" required>
+
+        <button type="submit">Envoyer</button>
+    </form>
+
+    <div id="confirmation-message">Merci, vos informations ont été enregistrées.</div>
+
+    <script>
+        function showConfirmationMessage() {
+            document.getElementById("myForm").style.display = "none";
+            document.getElementById("confirmation-message").style.display = "block";
+        }
+    </script>
+
+</body>
+</html>
